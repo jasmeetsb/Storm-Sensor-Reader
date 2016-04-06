@@ -1,0 +1,17 @@
+﻿using System;
+using Microsoft.SCP;
+
+namespace SensorStream
+{
+    public static class Sensor
+    {
+        public static Values GetSensorReading()
+        {
+            Random r = new Random(DateTime.Now.Millisecond);
+            var reading = new Values(DateTime.UtcNow,
+            "Sensor " + r.Next(10).ToString(),
+            r.Next());
+            return reading;
+        }
+    }
+}
